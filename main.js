@@ -29,10 +29,11 @@ function start()
 recognition.onresult = function(event) {
 
  console.log(event); 
-  to_number=Number(content);
 
  content = event.results[0][0].transcript;
 
+ to_number=Number(content);
+  console.log(to_number);
     document.getElementById("status").innerHTML = "The speech has been recognized: " + content; 
 
     if(Number.isInteger(to_number)){
@@ -54,7 +55,7 @@ function setup() {
 function draw() {
   if(draw_apple == "set")
   {
-    for(var i=1;ilessto_number;1++)
+    for(var i=1;i<=to_number;i++)
     {
       x=Math.floor(Math.random()*700)
       y=Math.floor(Math.random()*400)
